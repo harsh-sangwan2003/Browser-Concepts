@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Events</title>
+
+    <style>
+        .orange {
+
+            background-color: orange;
+            height: 15rem;
+            width: 15rem;
+            position: absolute;
+        }
+
+        .blue {
+
+            position: relative;
+            top: 2rem;
+            left: 1rem;
+            background-color: blue;
+            height: 10rem;
+            width: 10rem;
+        }
+
+        .yellow {
+
+            position: relative;
+            top: 2rem;
+            left: 2rem;
+            background-color: yellow;
+            height: 5rem;
+            width: 5rem;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="orange">
+        <div class="blue">
+            <div class="yellow">
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let orange = document.querySelector(".orange");
+        let blue = document.querySelector(".blue");
+        let yellow = document.querySelector(".yellow");
+
+        orange.addEventListener("click", e => {
+
+            alert("Orange");
+        },true)
+
+        blue.addEventListener("click", e => {
+
+            alert("Blue");
+            e.stopImmediatePropagation();
+        })
+
+        yellow.addEventListener("click", e => {
+
+            alert("Yellow");
+        })
+
+    </script>
+</body>
+
+</html>
